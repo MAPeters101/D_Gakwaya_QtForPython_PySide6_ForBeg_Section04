@@ -1,4 +1,5 @@
 from PySide6.QtCore import QSize
+from PySide6.QtGui import QAction
 from PySide6.QtWidgets import QMainWindow, QToolBar
 
 
@@ -33,12 +34,16 @@ class MainWindow(QMainWindow):
     # Add the quit action to the toolbar
     toolbar.addAction(quit_action)
 
-
+    action1 = QAction("Some Action", self)
+    action1.setStatusTip("Status message for some action")
+    action1.triggered.connect(self.toolbar_button_click)
+    toolbar.addAction(action1)
 
 
   def quit_app(self):
     self.app.quit()
 
-
+  def toolbar_button_click(self):
+    print("action triggered")
 
 
