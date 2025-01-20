@@ -1,5 +1,5 @@
 from PySide6.QtCore import QSize
-from PySide6.QtGui import QAction
+from PySide6.QtGui import QAction, QIcon
 from PySide6.QtWidgets import QMainWindow, QToolBar
 
 
@@ -38,6 +38,12 @@ class MainWindow(QMainWindow):
     action1.setStatusTip("Status message for some action")
     action1.triggered.connect(self.toolbar_button_click)
     toolbar.addAction(action1)
+
+    action2 = QAction(QIcon("start.png"), "Some other action", self)
+    action2.setStatusTip("Status message for some otheraction")
+    action2.triggered.connect(self.toolbar_button_click)
+    #action2.setCheckable(True)
+    toolbar.addAction(action2)
 
 
   def quit_app(self):
