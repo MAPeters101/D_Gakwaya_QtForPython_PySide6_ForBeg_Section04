@@ -1,4 +1,5 @@
-from PySide6.QtWidgets import QApplication, QMainWindow
+from PySide6.QtCore import QSize
+from PySide6.QtWidgets import QMainWindow, QToolBar
 
 
 class MainWindow(QMainWindow):
@@ -23,6 +24,15 @@ class MainWindow(QMainWindow):
     edit_menu = menu_bar.addMenu("Window")
     edit_menu = menu_bar.addMenu("Setting")
     edit_menu = menu_bar.addMenu("Help")
+
+    # Working with toolbars
+    toolbar = QToolBar("My main toolbar")
+    toolbar.setIconSize(QSize(16, 16))
+    self.addToolBar(toolbar)
+
+    # Add the quit action to the toolbar
+    toolbar.addAction(quit_action)
+
 
 
 
