@@ -9,9 +9,22 @@ class MainWindow(QMainWindow):
 
     # Menubar and menus
     menu_bar = self.menuBar()
-    file_menu = menu_bar.addMenu("&File")
+    file_menu = menu_bar.addMenu("File")
     quit_action = file_menu.addAction("Quit")
     quit_action.triggered.connect(self.quit_app)
+
+    edit_menu = menu_bar.addMenu("Edit")
+    edit_menu.addAction("Copy")
+    edit_menu.addAction("Cut")
+    edit_menu.addAction("Paste")
+    edit_menu.addAction("Undo")
+    edit_menu.addAction("Redo")
+
+    edit_menu = menu_bar.addMenu("Window")
+    edit_menu = menu_bar.addMenu("Setting")
+    edit_menu = menu_bar.addMenu("Help")
+
+
 
   def quit_app(self):
     self.app.quit()
