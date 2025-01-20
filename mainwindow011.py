@@ -57,6 +57,6 @@ class MainWindow(QMainWindow):
 
   def toolbar_button_click(self):
     print("action triggered")
-    self.statusBar().showMessage("Message from my app")
+    self.statusBar().showMessage("Message from my app", 3000)
 
 
