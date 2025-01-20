@@ -10,7 +10,12 @@ class MainWindow(QMainWindow):
     # Menubar and menus
     menu_bar = self.menuBar()
     file_menu = menu_bar.addMenu("&File")
+    quit_action = file_menu.addAction("Quit")
+    quit_action.triggered.connect(self.quit_app)
 
-    
+  def quit_app(self):
+    self.app.quit()
+
+
 
 
