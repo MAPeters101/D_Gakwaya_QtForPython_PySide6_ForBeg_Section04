@@ -7,6 +7,10 @@ class MainWindow(QMainWindow):
     self.app = app #declare an app member
     self.setWindowTitle("Custom MainWindow")
 
+    # Menubar and menus
+    menu_bar = self.menuBar()
+    file_menu = menu_bar.addMenu("&File")
+
     
 
 
