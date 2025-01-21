@@ -10,8 +10,8 @@ class Widget(QWidget):
     label = QLabel("Fullname: ")
     self.line_edit = QLineEdit(label)
     #self.line_edit.textChanged.connect(self.text_changed)
-    self.line_edit.cursorPositionChanged.connect(self.cursor_position_changed)
-
+    #self.line_edit.cursorPositionChanged.connect(self.cursor_position_changed)
+    self.line_edit.editingFinished.connect(self.editing_finished)
 
     button = QPushButton("Grab data")
     button.clicked.connect(self.button_clicked)
@@ -39,6 +39,9 @@ class Widget(QWidget):
 
   def cursor_position_changed(self,old,new):
     print("Cursor old position:",old,"   new position:",new)
+
+  def editing_finished(self):
+    print("Editing finished")
 
 
 
