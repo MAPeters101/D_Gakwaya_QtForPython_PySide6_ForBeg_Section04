@@ -53,7 +53,14 @@ class Widget(QWidget):
       print("User chose Cancel")
 
   def button_clicked_critical(self):
-    print("Critical")
+    ret = QMessageBox.critical(self,"Message Title",
+                               "Critical Message!",
+                               QMessageBox.Ok | QMessageBox.Cancel)
+    if ret == QMessageBox.Ok:
+      print("User chose OK")
+    else:    
+      print("User chose Cancel")
+    
   def button_clicked_question(self):
     print("Question")
   def button_clicked_information(self):
