@@ -34,7 +34,7 @@ class Widget(QWidget):
     layout.addWidget(button_about)
     self.setLayout(layout)
 
-  # The hard way
+  # The hard way: Critical
   def button_clicked_hard(self):
     message = QMessageBox()
     message.setMinimumSize(700,200)
@@ -52,6 +52,7 @@ class Widget(QWidget):
     else:    
       print("User chose Cancel")
 
+  # Critical
   def button_clicked_critical(self):
     ret = QMessageBox.critical(self,"Message Title",
                                "Critical Message!",
@@ -61,6 +62,7 @@ class Widget(QWidget):
     else:    
       print("User chose Cancel")
     
+  # Question
   def button_clicked_question(self):
     ret = QMessageBox.question(self,"Message Title",
                                     "Asking a question?",
@@ -69,7 +71,8 @@ class Widget(QWidget):
       print("User chose OK")
     else:    
       print("User chose Cancel")
-    
+
+  # Information  
   def button_clicked_information(self):
     ret = QMessageBox.information(self,"Message Title",
                                     "Some information",
@@ -78,7 +81,8 @@ class Widget(QWidget):
       print("User chose OK")
     else:    
       print("User chose Cancel")
-    
+
+  # Warning  
   def button_clicked_warning(self):
     ret = QMessageBox.warning(self,"Message Title",
                                     "Some warning",
@@ -87,7 +91,8 @@ class Widget(QWidget):
       print("User chose OK")
     else:    
       print("User chose Cancel")
-    
+
+  # About  
   def button_clicked_about(self):
     ret = QMessageBox.about(self,"Message Title",
                                   "Some about message")
