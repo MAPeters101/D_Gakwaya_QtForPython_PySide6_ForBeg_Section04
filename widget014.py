@@ -11,7 +11,8 @@ class Widget(QWidget):
     self.line_edit = QLineEdit(label)
     #self.line_edit.textChanged.connect(self.text_changed)
     #self.line_edit.cursorPositionChanged.connect(self.cursor_position_changed)
-    self.line_edit.editingFinished.connect(self.editing_finished)
+    #self.line_edit.editingFinished.connect(self.editing_finished)
+    self.line_edit.returnPressed.connect(self.return_pressed)
 
     button = QPushButton("Grab data")
     button.clicked.connect(self.button_clicked)
@@ -42,6 +43,9 @@ class Widget(QWidget):
 
   def editing_finished(self):
     print("Editing finished")
+
+  def return_pressed(self):
+    print("Return pressed")
 
 
 
