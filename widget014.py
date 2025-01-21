@@ -9,8 +9,8 @@ class Widget(QWidget):
     # A set of signals we can connect to
     label = QLabel("Fullname: ")
     self.line_edit = QLineEdit(label)
-    self.line_edit.textChanged.connect(self.text_changed)
-
+    #self.line_edit.textChanged.connect(self.text_changed)
+    self.line_edit.cursorPositionChanged.connect(self.cursor_position_changed)
 
 
     button = QPushButton("Grab data")
@@ -36,3 +36,9 @@ class Widget(QWidget):
   def text_changed(self):
     #print("Fullname:", self.line_edit.text())
     self.text_holder_label.setText(self.line_edit.text())
+
+  def cursor_position_changed(self,old,new):
+    print("Cursor old position:",old,"   new position:",new)
+
+
+
