@@ -9,6 +9,9 @@ class Widget(QWidget):
     # A set of signals we can connect to
     label = QLabel("Fullname: ")
     self.line_edit = QLineEdit(label)
+    self.line_edit.textChanged.connect(self.text_changed)
+
+
 
     button = QPushButton("Grab data")
     button.clicked.connect(self.button_clicked)
@@ -27,5 +30,9 @@ class Widget(QWidget):
 
   # Slots
   def button_clicked(self):
-    print("Fullname:", self.line_edit.text())
+    #print("Fullname:", self.line_edit.text())
+    self.text_holder_label.setText(self.line_edit.text())
+
+  def text_changed(self):
+    #print("Fullname:", self.line_edit.text())
     self.text_holder_label.setText(self.line_edit.text())
