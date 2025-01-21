@@ -71,7 +71,14 @@ class Widget(QWidget):
       print("User chose Cancel")
     
   def button_clicked_information(self):
-    print("Information")
+    ret = QMessageBox.information(self,"Message Title",
+                                    "Some information",
+                                    QMessageBox.Ok | QMessageBox.Cancel)
+    if ret == QMessageBox.Ok:
+      print("User chose OK")
+    else:    
+      print("User chose Cancel")
+    
   def button_clicked_warning(self):
     print("Warning")
   def button_clicked_about(self):
