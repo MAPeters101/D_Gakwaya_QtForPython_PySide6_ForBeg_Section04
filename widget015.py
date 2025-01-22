@@ -20,7 +20,8 @@ class Widget(QWidget):
     cut_button.clicked.connect(self.text_edit.cut)
 
     paste_button = QPushButton("Paste")
-    #paste_button.clicked.connect(self.paste) # Go through a custom slot
+    paste_button.clicked.connect(self.text_edit.paste)
+    #paste_button.clicked.connect(self.text_edit.paste) # Go through a custom slot
 
     undo_button = QPushButton("Undo")
     undo_button.clicked.connect(self.text_edit.undo)
