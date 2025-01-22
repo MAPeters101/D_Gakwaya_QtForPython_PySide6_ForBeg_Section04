@@ -10,6 +10,9 @@ class Widget(QWidget):
     #self.text_edit.textChanged.connect(self.text_changed)
 
     # Buttons
+    current_text_button = QPushButton("Current Text")
+    current_text_button.clicked.connect(self.current_text_button_clicked)
+
     copy_button = QPushButton("Copy")
     copy_button.clicked.connect(self.text_edit.copy) # Connect directly to QTextEdit slot
 
@@ -35,6 +38,7 @@ class Widget(QWidget):
     clear_button.clicked.connect(self.text_edit.clear)
 
     h_layout = QHBoxLayout()
+    h_layout.addWidget(current_text_button)
     h_layout.addWidget(copy_button)
     h_layout.addWidget(cut_button)
     h_layout.addWidget(paste_button)
@@ -50,4 +54,5 @@ class Widget(QWidget):
 
     self.setLayout(v_layout)
 
-
+  def current_text_button_clicked(self):
+    print(self.text_edit.toPlainText())
