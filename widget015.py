@@ -30,10 +30,10 @@ class Widget(QWidget):
     redo_button.clicked.connect(self.text_edit.redo)
 
     set_plain_text_button = QPushButton("Set Plain Text")
-    #set_plain_text_button.clicked.connect(self.set_plain_text)
+    set_plain_text_button.clicked.connect(self.set_plain_text)
 
     set_html_button = QPushButton("Set html")
-    #set_html_button.clicked.connect(self.set_html)
+    set_html_button.clicked.connect(self.set_html)
 
     clear_button = QPushButton("Clear")
     clear_button.clicked.connect(self.text_edit.clear)
@@ -60,3 +60,9 @@ class Widget(QWidget):
 
   def paste(self):
     self.text_edit.paste()
+
+  def set_plain_text(self):
+    self.text_edit.setPlainText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
+
+  def set_html(self):
+    self.text_edit.setHtml("<h1>Kigali Districts</h1><p>The city of Kigali has three districts: </br> <ul> <li>Gasabo</li><li>Nyarugenge</li><li>Kickukiro</li></ul></p>")
