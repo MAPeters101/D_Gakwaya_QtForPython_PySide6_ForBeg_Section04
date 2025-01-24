@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QWidget, QCheckBox, QHBoxLayout, QVBoxLayout, QSizePolicy, QGridLayout, QPushButton
+from PySide6.QtWidgets import QWidget, QCheckBox, QHBoxLayout, QVBoxLayout, QSizePolicy, QGridLayout, QPushButton, QGroupBox
 
 
 class Widget(QWidget):
@@ -10,16 +10,21 @@ class Widget(QWidget):
     # Checkboxes: operating system
     os = QGroupBox("Choose operating system")
     windows = QCheckBox("Windows")
-    windows.toggled.connect(self.windows_box_toggled)
+    #windows.toggled.connect(self.windows_box_toggled)
 
     linux = QCheckBox("Linux")
-    linux.toggled.connect(self.linux_box_toggled)
+    #linux.toggled.connect(self.linux_box_toggled)
 
     mac = QCheckBox("Mac")
-    mac.toggled.connect(self.max_box_toggled)
+    #mac.toggled.connect(self.max_box_toggled)
     os_layout = QVBoxLayout()
     os_layout.addWidget(windows)
     os_layout.addWidget(linux)
     os_layout.addWidget(mac)
     os.setLayout(os_layout)
+
+    layout = QVBoxLayout()
+    layout.addWidget(os)
+
+    self.setLayout(layout)
 
